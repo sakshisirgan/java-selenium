@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Drag and Drop Demo</title>
+ <style>
+   #drag {
+     width: 100px;
+     height: 100px;
+     background: lightgray;
+     border: 1px solid black;
+     cursor: move;
+     margin-bottom: 30px;
+   }
+ 
+   #drop {
+     width: 120px;
+     height: 120px;
+     background: lightgreen;
+     border: 1px solid black;
+   }
+ </style>
+</head>
+<body>
+ 
+<h3>Drag the box and drop it on the green area</h3>
+ 
+<div id="drag" draggable="true">Drag Me</div>
+<div id="drop">Drop Here</div>
+ 
+ 
+ 
+ 
+<script>
+// Just to give a visual confirmation when dropped
+ const drag  = document.getElementById('drag');
+ const drop  = document.getElementById('drop');
+ 
+drop.addEventListener('dragover', function(e) {
+  e.preventDefault();
+ });
+drop.addEventListener('drop', function(e) {
+   drop.innerHTML = "Dropped!";
+ });
+</script>
+ 
+</body>
+</html>

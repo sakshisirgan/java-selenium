@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+</head>
+<body>
+  <h2>Sample Login</h2>
+  <form>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+
+    <button type="button" id="loginButton" onclick="validateLogin()">Login</button>
+    <p id="error" style="color:red; display:none;">Invalid credentials</p>
+  </form>
+
+  <script>
+    function validateLogin() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      if (user === "validUser" && pass === "validPass") {
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById("error").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
